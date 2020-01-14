@@ -1,0 +1,30 @@
+{
+	"xsappname": "demo",
+	"tenant-mode": "dedicated",
+	"scopes": [
+		{
+			"name": "$XSAPPNAME.read",
+			"description": "With this scope, USER can read principal data."
+		}
+	],
+	
+	"role-templates": [
+		{
+			"name": "Viewer",
+			"description": "Role to get USER principal data",
+			"scope-references": [
+				"$XSAPPNAME.read"
+			]
+		}
+	],
+	
+		"role-collections": [
+		{
+			"name": "PrincipalViewer",
+			"description": "Principal Data Authorizations",
+			"role-template-references": [
+				"$XSAPPNAME.Viewer"
+			]
+		}
+	]
+}

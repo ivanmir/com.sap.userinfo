@@ -1,0 +1,18 @@
+---
+applications:
+ 
+- name: userinfoapp-approuter
+  buildpacks:
+  - nodejs_buildpack
+  memory: 256M
+  disk-quota: 1G
+  routes:
+  - route: userinfoapp-approuter.cfapps.eu10.hana.ondemand.com
+  env:
+    NODE_TLS_REJECT_UNAUTHORIZED: 0
+    destinations: >
+      [
+         {"name":"UserInfoApp-destination", "url" :"https://userinfoapp-java.cfapps.eu10.hana.ondemand.com", "forwardAuthToken": true }
+      ]
+  services:
+    - UserInfoApp-xsuaa

@@ -1,0 +1,12 @@
+{ 
+	"authenticationMethod": "route",
+	"logout": {
+		"logoutEndpoint": "/do/logout"
+	},	
+	"routes": [ {
+		"source": "^/(.*)$",
+		"authenticationType": "xsuaa",
+		"destination": "UserInfoApp-destination",
+		"csrfProtection": false
+	} ]	
+}

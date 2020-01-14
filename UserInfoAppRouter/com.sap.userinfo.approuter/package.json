@@ -1,0 +1,16 @@
+{
+  "name": "demo-approuter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "node_modules/@sap/approuter/approuter.js",
+  "scripts": {
+    "start": "node node_modules/@sap/approuter/approuter.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@sap/approuter": "^6.6.0"
+  },
+   "engines": {
+      "node": "^10.16.0"
+   }  
+}
