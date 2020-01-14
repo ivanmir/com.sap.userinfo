@@ -18,4 +18,4 @@ to
 ```
 
 The app has all Spring Boot Actuators enabled.
-To disable them open the application.properties file - it is self explanatory. 
+To disable them open the application.properties file - it is self explanatory.
