@@ -1,0 +1,20 @@
+---
+applications:
+ 
+- name: userinfoapp-java
+  path: target/UserInfoApp-0.0.1-SNAPSHOT.jar
+  buildpacks:
+    - sap_java_buildpack
+  memory: 768M
+  disk-quota: 1G
+  routes:
+  - route: userinfoapp-java.cfapps.eu10.hana.ondemand.com
+   
+  env:
+    # Accept any OAuth client of any identity zone
+    SAP_JWT_TRUST_ACL: '[{"clientid":"*","identityzone":"*"}]'
+    xsuaa_connectivity_instance_name: "UserInfoApp-xsuaa"
+
+  services:
+    - destination-service
+    - UserInfoApp-xsuaa
